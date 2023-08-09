@@ -24,7 +24,6 @@ public class ReadXLSdata {
 		Sheet sheetName = wb.getSheet(excelsheetName);
 		
 		int totalRows = sheetName.getLastRowNum();
-		System.out.println(totalRows);
 		Row rowCells = sheetName.getRow(0);
 		int totalCols = rowCells.getLastCellNum();
 		System.out.println(totalCols);

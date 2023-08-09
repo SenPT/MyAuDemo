@@ -32,13 +32,13 @@ public class BaseTest {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.get(lop.getProperty("testurl"));
+			driver.get(lop.getProperty("testEbayUrl"));
 		}
 		else if (lop.getProperty("browser").equalsIgnoreCase("firefox")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-			driver.get(lop.getProperty("testurl"));
+			driver.get(lop.getProperty("testEbayUrl"));
 		}
 	}
 	
