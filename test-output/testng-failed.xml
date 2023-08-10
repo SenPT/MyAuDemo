@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="LoginEbay" invocation-numbers="0 2"/>
+          <include name="LoginEbay" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- testcase.SignInEbay -->
     </classes>
