@@ -1,4 +1,4 @@
-package utilities;
+package helpers;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,18 +13,17 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.annotations.DataProvider;
 
-public class ReadXLSdataEbay {
+public class ReadXLSdata {
 	
-	@DataProvider(name="bvtdataebay")
-	public String[][] getData(Method m) throws EncryptedDocumentException, IOException {
+	//@DataProvider(name="bvtdata")
+	public void getData(Method m) throws EncryptedDocumentException, IOException {
 		String excelsheetName = m.getName();
-		File f = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\testdataebay.xlsx");
+		File f = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\testdata.xlsx");
 		FileInputStream fis = new FileInputStream(f);
 		Workbook wb = WorkbookFactory.create(f);
 		Sheet sheetName = wb.getSheet(excelsheetName);
 		
 		int totalRows = sheetName.getLastRowNum();
-		System.out.println(totalRows);
 		Row rowCells = sheetName.getRow(0);
 		int totalCols = rowCells.getLastCellNum();
 		System.out.println(totalCols);
@@ -38,7 +37,8 @@ public class ReadXLSdataEbay {
 				System.out.println(testData[i-1][j]);
 			}
 		}
-		return testData;
+		//return testData;
+
 	}
 
 }

@@ -1,0 +1,14 @@
+{
+  "elements": [
+    {
+      "name" : "usernameTxt",
+      "locator": "user-name",
+      "by": "id"
+    },
+    {
+      "name" : "passwordTxt",
+      "locator": "password",
+      "by": "id"
+    }
+  ]
+}
