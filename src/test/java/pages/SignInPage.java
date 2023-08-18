@@ -1,4 +1,7 @@
 package pages;
+import java.io.IOException;
+
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.LocatorHelper;
@@ -8,7 +11,7 @@ public class SignInPage extends BasePage{
     WebElement passwordTxt;
     WebElement loginBtn;
 
-    public SignInPage() {
+    public SignInPage() throws IOException, ParseException {
         usernameTxt = driver.findElement(By.id(LocatorHelper.getElement("usernameTxt")));
         passwordTxt = driver.findElement(By.id(LocatorHelper.getElement("password_field")));
         loginBtn = driver.findElement(By.id(LocatorHelper.getElement("login_button")));
