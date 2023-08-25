@@ -2,7 +2,7 @@
   "elements": [
     {
       "name" : "usernameTxt",
-      "locator": "user-name",
+      "locator": "userid",
       "by": "id"
     },
     {

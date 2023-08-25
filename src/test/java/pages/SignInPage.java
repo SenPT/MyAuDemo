@@ -12,9 +12,9 @@ public class SignInPage extends BasePage{
     WebElement loginBtn;
 
     public SignInPage() throws IOException, ParseException {
-        usernameTxt = driver.findElement(By.id(LocatorHelper.getElement("usernameTxt")));
-        passwordTxt = driver.findElement(By.id(LocatorHelper.getElement("password_field")));
-        loginBtn = driver.findElement(By.id(LocatorHelper.getElement("login_button")));
+        usernameTxt = driver.findElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "usernameTxt")));
+        passwordTxt = driver.findElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "password_field")));
+        loginBtn = driver.findElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "login_button")));
     }
 
     public void signIn(String username, String password) {

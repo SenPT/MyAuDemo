@@ -9,18 +9,20 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class LocatorHelper {
-    public static String getElement(String elementName) throws IOException, ParseException{
+    public static String getElement(String filePath, String elementName) throws IOException, ParseException{
+
     	JSONParser jsonParser = new JSONParser();
-      	FileReader reader = new FileReader((System.getProperty("user.dir"))+("\\MyAugustDemo\\src\\test\\resources\\locators\\SignInPageLocator.json"));
-      	
+		final String locatorsPath = (System.getProperty("user.dir")) + ("\\src\\test\\resources\\locators\\");
+      	FileReader reader = new FileReader(locatorsPath + filePath + "Locator.json");
       	Object obj = jsonParser.parse(reader);
-      	JSONArray elementList = (JSONArray) obj;
-      	
-      	for(int i=0; i<elementList.size();i++) {
-      		JSONObject elements = (JSONObject) elementList.get(i);
-      		JSONObject element = (JSONObject) elements.get("elements");
-      		String name=(String) element.get("name");
-      	}
+		JSONObject jsonObject = (JSONObject) obj;
+		JSONArray elementList = (JSONArray) jsonObject.get("elements");
+		for (var element: elementList) {
+			String name = ((JSONObject) element).get("name").toString();
+			if (name.equals(elementName)) {
+				return ((JSONObject) element).get("locator").toString();
+			}
+		}
         return "";
     }
 }
