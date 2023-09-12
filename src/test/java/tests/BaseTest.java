@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import static pages.BasePage.driver;
+import static driverHelper.DriverManager.driver;
 
 public class BaseTest {
 	private static Properties lop = new Properties();

@@ -1,7 +1,7 @@
-package pages;
+package driverHelper;
 
 import org.openqa.selenium.WebDriver;
 
-public abstract class BasePage {
+public class DriverManager {
     public static WebDriver driver;
 }
