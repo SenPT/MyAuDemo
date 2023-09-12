@@ -1,0 +1,9 @@
+{
+  "elements": [
+    {
+      "name": "signinLink",
+      "locator": "Sign in",
+      "by": "linkText"
+    }
+  ]
+}

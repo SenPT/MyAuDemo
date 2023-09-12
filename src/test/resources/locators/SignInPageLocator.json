@@ -9,6 +9,16 @@
       "name" : "passwordTxt",
       "locator": "password",
       "by": "id"
+    },
+    {
+      "name": "signincontinueBtn",
+      "locator": "signin-continue-btn",
+      "by": "id"
+    },
+    {
+      "name": "signinBtn",
+      "locator": "sgnBt",
+      "by": "id"
     }
   ]
 }

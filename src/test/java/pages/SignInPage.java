@@ -9,18 +9,21 @@ import utilities.LocatorHelper;
 
 public class SignInPage extends BasePage{
     BaseElement usernameTxt;
-    WebElement passwordTxt;
-    WebElement loginBtn;
+    BaseElement passwordTxt;
+    BaseElement signincontinueBtn;
+    BaseElement signinBtn;
 
     public SignInPage() throws IOException, ParseException {
         usernameTxt = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "usernameTxt")));
-        passwordTxt = driver.findElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "password_field")));
-        //loginBtn = driver.findElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "login_button")));
+        signincontinueBtn = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "signincontinueBtn")));
+        passwordTxt = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "passwordTxt")));
+        signinBtn = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "signinBtn")));
     }
 
     public void signIn(String username, String password) {
         usernameTxt.sendText(username);
-        passwordTxt.sendKeys(password);
-        loginBtn.click();
+        signincontinueBtn.clickButton();
+        passwordTxt.sendText(password);
+        signinBtn.clickButton();
     }
 }

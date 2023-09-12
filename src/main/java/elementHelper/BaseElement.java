@@ -21,4 +21,9 @@ public class BaseElement {
       this.findElement(_by);
       this.ele.sendKeys(value);
    }
+
+   public void clickButton(){
+      this.findElement(_by);
+      this.ele.click();
+   }
 }
