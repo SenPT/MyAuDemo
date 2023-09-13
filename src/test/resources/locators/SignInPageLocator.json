@@ -7,7 +7,7 @@
     },
     {
       "name" : "passwordTxt",
-      "locator": "password",
+      "locator": "pass",
       "by": "id"
     },
     {
