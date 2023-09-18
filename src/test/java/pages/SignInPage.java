@@ -20,7 +20,7 @@ public class SignInPage extends BasePage{
         signinBtn = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "signinBtn")));
     }
 
-    public void signIn(String username, String password) {
+    public void signIn(String username, String password) throws InterruptedException {
         usernameTxt.sendText(username);
         signincontinueBtn.clickButton();
         passwordTxt.sendText(password);

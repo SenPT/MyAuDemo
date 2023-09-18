@@ -1,0 +1,14 @@
+{
+  "elements": [
+    {
+      "name": "searchTxt",
+      "locator": "gh-ac",
+      "by":"id"
+    },
+    {
+      "name": "searchBtn",
+      "locator": "gh-btn",
+      "by": "id"
+    }
+  ]
+}
