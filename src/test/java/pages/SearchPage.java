@@ -11,8 +11,8 @@ public class SearchPage extends BasePage{
     BaseElement searchTxt;
     BaseElement searchBtn;
     public SearchPage() throws IOException, ParseException {
-        searchTxt = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(),"searchTxt")));
-        searchBtn = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(),"searchBtn")));
+        searchTxt = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(),"searchTxt"));
+        searchBtn = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(),"searchBtn"));
     }
     public void Search(){
         searchTxt.sendText("book");

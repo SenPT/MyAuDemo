@@ -7,10 +7,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 
 public class LocatorHelper {
-    public static String getElement(String filePath, String elementName) throws IOException, ParseException{
-
+    public static By getElement(String filePath, String elementName) throws IOException, ParseException
+	{
     	JSONParser jsonParser = new JSONParser();
 		final String locatorsPath = (System.getProperty("user.dir")) + ("\\src\\test\\resources\\locators\\");
       	FileReader reader = new FileReader(locatorsPath + filePath + "Locator.json");
@@ -19,10 +20,19 @@ public class LocatorHelper {
 		JSONArray elementList = (JSONArray) jsonObject.get("elements");
 		for (var element: elementList) {
 			String name = ((JSONObject) element).get("name").toString();
+			String by = ((JSONObject) element).get("by").toString();
 			if (name.equals(elementName)) {
-				return ((JSONObject) element).get("locator").toString();
+				if (by.equals("id")){
+					return By.id(((JSONObject) element).get("locator").toString());
+				}
+				else if (by.equals("xpath")){
+					return By.xpath(((JSONObject) element).get("locator").toString());
+				}
+				else if (by.equals("linkText")){
+					return By.linkText(((JSONObject) element).get("locator").toString());
+				}
 			}
 		}
-        return "";
+        return null;
     }
 }

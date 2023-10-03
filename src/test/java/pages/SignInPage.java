@@ -14,10 +14,10 @@ public class SignInPage extends BasePage{
     BaseElement signinBtn;
 
     public SignInPage() throws IOException, ParseException {
-        usernameTxt = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "usernameTxt")));
-        signincontinueBtn = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "signincontinueBtn")));
-        passwordTxt = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "passwordTxt")));
-        signinBtn = new BaseElement(By.id(LocatorHelper.getElement(this.getClass().getSimpleName(), "signinBtn")));
+        usernameTxt = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "usernameTxt"));
+        signincontinueBtn = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "signincontinueBtn"));
+        passwordTxt = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "passwordTxt"));
+        signinBtn = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "signinBtn"));
     }
 
     public void signIn(String username, String password) throws InterruptedException {

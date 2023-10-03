@@ -2,6 +2,7 @@ package tests;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,12 +31,14 @@ public class BaseTest {
 		{
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 			driver.manage().window().maximize();
 			driver.get(lop.getProperty("testEbayUrl"));
 		}
 		else if (lop.getProperty("browser").equalsIgnoreCase("firefox")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new FirefoxDriver();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 			driver.manage().window().maximize();
 			driver.get(lop.getProperty("testEbayUrl"));
 		}

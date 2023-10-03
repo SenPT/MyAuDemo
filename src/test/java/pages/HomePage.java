@@ -13,7 +13,7 @@ public class HomePage extends BasePage{
     BaseElement signinLink;
 
     public HomePage() throws IOException, ParseException {
-        signinLink = new BaseElement(By.linkText(LocatorHelper.getElement(this.getClass().getSimpleName(),"signinLink")));
+        signinLink = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(),"signinLink"));
     }
     public void SignInFromHomePage(){
         signinLink.clickButton();
