@@ -11,12 +11,13 @@ import pages.SignInPage;
 
 public class SignInTest extends BaseTest{
 	@Test()
-	public static void LoginTest() throws IOException, ParseException, InterruptedException {
+	public static void LoginTest() throws IOException, ParseException {
 		HomePage homePage = new HomePage();
 		homePage.SignInFromHomePage();
 		SignInPage signInPage = new SignInPage();
 		signInPage.signIn("phanthisen51195@gmail.com", "S12345678");
 		SearchPage searchPage = new SearchPage();
 		searchPage.Search();
+		searchPage.verifyResult();
 	}
 }

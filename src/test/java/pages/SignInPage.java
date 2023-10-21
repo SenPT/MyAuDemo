@@ -1,29 +1,27 @@
 package pages;
 import java.io.IOException;
 
-import elementHelper.BaseElement;
+import elementHelper.Button;
+import elementHelper.Textbox;
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import utilities.LocatorHelper;
 
 public class SignInPage extends BasePage{
-    BaseElement usernameTxt;
-    BaseElement passwordTxt;
-    BaseElement signincontinueBtn;
-    BaseElement signinBtn;
+    Textbox usernameTxt;
+    Textbox passwordTxt;
+    Button signInContinueBtn;
+    Button signInBtn;
 
     public SignInPage() throws IOException, ParseException {
-        usernameTxt = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "usernameTxt"));
-        signincontinueBtn = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "signincontinueBtn"));
-        passwordTxt = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "passwordTxt"));
-        signinBtn = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(), "signinBtn"));
+        usernameTxt = new Textbox(LocatorHelper.getElement(this.getClass().getSimpleName(), "usernameTxt"));
+        signInContinueBtn = new Button(LocatorHelper.getElement(this.getClass().getSimpleName(), "signincontinueBtn"));
+        passwordTxt = new Textbox(LocatorHelper.getElement(this.getClass().getSimpleName(), "passwordTxt"));
+        signInBtn = new Button(LocatorHelper.getElement(this.getClass().getSimpleName(), "signinBtn"));
     }
-
-    public void signIn(String username, String password) throws InterruptedException {
+    public void signIn(String username, String password)  {
         usernameTxt.sendText(username);
-        signincontinueBtn.clickButton();
+        signInContinueBtn.clickButton();
         passwordTxt.sendText(password);
-        signinBtn.clickButton();
+        signInBtn.clickButton();
     }
 }

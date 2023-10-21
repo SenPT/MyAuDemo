@@ -1,19 +1,16 @@
 package pages;
 
-import elementHelper.BaseElement;
+import elementHelper.Button;
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.xml.sax.Locator;
 import utilities.LocatorHelper;
 
 import java.io.IOException;
 
 public class HomePage extends BasePage{
-    BaseElement signinLink;
+    Button signinLink;
 
     public HomePage() throws IOException, ParseException {
-        signinLink = new BaseElement(LocatorHelper.getElement(this.getClass().getSimpleName(),"signinLink"));
+        signinLink = new Button(LocatorHelper.getElement(this.getClass().getSimpleName(),"signinLink"));
     }
     public void SignInFromHomePage(){
         signinLink.clickButton();
