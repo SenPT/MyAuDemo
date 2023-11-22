@@ -14,7 +14,6 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.annotations.DataProvider;
 
 public class ReadXLSdataEbay {
-	
 	@DataProvider(name="bvtdataebay")
 	public String[][] getData(Method m) throws EncryptedDocumentException, IOException {
 		String excelsheetName = m.getName();

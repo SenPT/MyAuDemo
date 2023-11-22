@@ -11,18 +11,8 @@
       "by": "id"
     },
     {
-      "name": "result1",
-      "locator": "(//span[contains(@role,'heading')])[2]",
-      "by": "xpath"
-    },
-    {
-      "name": "result2",
-      "locator": "(//span[contains(@role,'heading')])[3]",
-      "by": "xpath"
-    },
-    {
-      "name": "result3",
-      "locator": "(//span[contains(@role,'heading')])[4]",
+      "name": "result",
+      "locator": "(//div[contains(@id,'srp-river-results')]//div[contains(@class,'s-item__title')])[1]",
       "by": "xpath"
     }
   ]
